@@ -1,36 +1,27 @@
 import java.util.Random;
 public class Deck{
-	public Card[] card1 = new Card[52];
-	private String[] type = { "♠" , "♣" , "♥" , "♦"};
-	private String[] number={"Ace","2","3","4","5","6","7","8","9","10","Jack","Queen","King"};
+	private String[] SUITS = { "♠" , "♣" , "♥" , "♦"};
+	private String[] RANKS={"Ace","2","3","4","5","6","7","8","9","10","Jack","Queen","King"};
 	
-	Deck(){
-		int indexCards=0;
-		for(int i=0;i<type.length;i++){
-			for(int k=0;k<number.length;k++){
-				card1[indexCard] = new Card(type[i],number[k];
-				indexCard +=1;
-			}
-		}
+        int n = SUITS.length * RANKS.length;
+        String[] deck = new String[n];
+		Deck(){
+        for (int i = 0; i < RANKS.length; i++) {
+            for (int j = 0; j < SUITS.length; j++) {
+                deck[SUITS.length*i + j] = RANKS[i] + " of " + SUITS[j];
+            }
+        }
+	}
 		
-	}
-	private Random r = new Random();
 	public void shuffle(){
-		Card temp;
-		for(int i = 0;i < 52;i++){
-			int a = r.nextInt(52);
-			temp = deck[i];
-			deck[i] = deck[a];
-			deck[a] = temp;
+		for (int i = 0; i < n; i++) {
+            int r = i + (int) (Math.random() * (n-i));
+            String temp = deck[r];
+            deck[r] = deck[i];
+            deck[i] = temp;
+		}		
+		 for (int i = 0; i < n; i++) {
+            System.out.println(deck[i]);
 		}
-		for(int i = 0;i<52;i++){
-			System.out.println(deck[i]);
-		}
-	}
-	public static void main(String[] args){
-		Deck deck1 = new Deck();
-		for(int i =0;i<52;i++){
-			System.out.println(deck1.Deck[i].getNum());
-		}
-	}
+    }
 }
