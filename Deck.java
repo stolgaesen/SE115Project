@@ -1,6 +1,6 @@
 import java.util.Random;
 public class Deck{
-	public Card[] deck = new Card[52];
+	public Card[] card1 = new Card[52];
 	private String[] type = { "♠" , "♣" , "♥" , "♦"};
 	private String[] number={"Ace","2","3","4","5","6","7","8","9","10","Jack","Queen","King"};
 	
@@ -8,7 +8,7 @@ public class Deck{
 		int indexCards=0;
 		for(int i=0;i<type.length;i++){
 			for(int k=0;k<number.length;k++){
-				deck[indexCard] = new Card(type[i],number[k];
+				card1[indexCard] = new Card(type[i],number[k];
 				indexCard +=1;
 			}
 		}
