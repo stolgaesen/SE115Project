@@ -1,6 +1,6 @@
 import java.util.Random;
 public class Deck{
-	private String[] SUITS = { "♠" , "♣" , "♥" , "♦"};
+	private String[] SUITS = {"Clubs", "Diamonds", "Hearts", "Spades" };
 	private String[] RANKS={"Ace","2","3","4","5","6","7","8","9","10","Jack","Queen","King"};
 	
         int n = SUITS.length * RANKS.length;
