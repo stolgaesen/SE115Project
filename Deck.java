@@ -12,7 +12,7 @@ public class Deck{
             }
         }
 	}
-		
+	// to shuffle the deck	
 	public void shuffle(){
 		for (int i = 0; i < n; i++) {
             int r = i + (int) (Math.random() * (n-i));
