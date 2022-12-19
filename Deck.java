@@ -5,6 +5,7 @@ public class Deck{
 	
         int n = SUITS.length * RANKS.length;
         String[] deck = new String[n];
+		//It's deck constructor
 		Deck(){
         for (int i = 0; i < RANKS.length; i++) {
             for (int j = 0; j < SUITS.length; j++) {
