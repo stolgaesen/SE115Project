@@ -5,5 +5,7 @@ public static void main(String[] args){
 	System.out.println("Hello! Welcome to the my first pişti(pishti) Game");
 	Deck a = new Deck();
 	a.shuffle();
+	System.out.println("Please enter a number and cut the deck");
+	a.cut();
  }
 }
