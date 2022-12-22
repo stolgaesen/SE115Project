@@ -1,5 +1,6 @@
 import java.util.Random;
 import java.util.Scanner;
+import java.util.InputMismatchException;
 public class Deck{
 	private String[] SUITS = {"Clubs", "Diamonds", "Hearts", "Spades" };
 	private String[] RANKS={"Ace","2","3","4","5","6","7","8","9","10","Jack","Queen","King"};
@@ -32,7 +33,7 @@ public class Deck{
 	public void cut(){
 		int cutpoint = sc.nextInt();
 		if(cutpoint >=1 && cutpoint <=51) System.out.println("Cutting is doing");
-		else System.out.println("Please enter a valid cutpoint");
+		else System.out.println("Please enter a valid cutpoint");	
 		String[] copying1 = new String[cutpoint];
 		String[] copying2 = new String[52-cutpoint];
 		System.arraycopy(deck, 0 , copying1, 0 ,cutpoint);
