@@ -19,7 +19,7 @@ public class Card {
 		this.type=type;
 	}
 	public void setNum(String Num){
-		this.num=num
+		this.num=num;
 	}
 	public String toCardInfo(){
 		return type + " " + num;
