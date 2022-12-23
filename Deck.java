@@ -82,8 +82,8 @@ public class Deck{
 				userCards[3]=cutdeck[i];
 				break;
 				case 7: 
-				System.out.println("The pc's third card is : " + cutdeck[i]);
-				pcCards[2] = cutdeck[i];
+				System.out.println("The pc's fourth card is : " + cutdeck[i]);
+				pcCards[3] = cutdeck[i];
 				break;
 			}		
         }
