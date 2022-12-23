@@ -46,46 +46,75 @@ public class Deck{
 			System.out.println(cutdeck[i]);
 		}
 	}	
-	public static int deckLastIndex = 51; //remaining cards
+	public static int deckLastIndex = 52; //remaining cards
 	public static String[] userCards = new String[52];
 	public static String[] pcCards = new String[52];
 	public static String[] boardCards = new String[52];
 	public void firstRound(){
+		//for loop to identify first 4 cards of user and pc
 		for(int i=0;i<8;i++){
 			switch(i){
 				case 0:
 				System.out.println("The user's first card is : " + cutdeck[i]);
 				userCards[0]=cutdeck[i];
+				deckLastIndex--;
 				break;
 				case 1: 
 				System.out.println("The pc's first card is : " + cutdeck[i]);
 				pcCards[0] = cutdeck[i];
+				deckLastIndex--;
 				break;
 				case 2:
 				System.out.println("The user's second card is : " + cutdeck[i]);
 				userCards[1]=cutdeck[i];
+				deckLastIndex--;
 				break;
 				case 3: 
 				System.out.println("The pc's second card is : " + cutdeck[i]);
 				pcCards[1] = cutdeck[i];
+				deckLastIndex--;
 				break;
 				case 4:
 				System.out.println("The user's third card is : " + cutdeck[i]);
 				userCards[2]=cutdeck[i];
+				deckLastIndex--;
 				break;
 				case 5: 
 				System.out.println("The pc's third card is : " + cutdeck[i]);
 				pcCards[2] = cutdeck[i];
+				deckLastIndex--;
 				break;
 				case 6:
 				System.out.println("The user's fourth card is : " + cutdeck[i]);
 				userCards[3]=cutdeck[i];
+				deckLastIndex--;
 				break;
 				case 7: 
 				System.out.println("The pc's fourth card is : " + cutdeck[i]);
 				pcCards[3] = cutdeck[i];
+				deckLastIndex--;
 				break;
 			}		
-        }
+        }//for loop to identify first 4 cards of board
+		for(int i=8;i<12;i++){
+			switch(i){
+				case 8:
+				boardCards[0]= cutdeck[i];
+				System.out.println("The boards's first card is : " + cutdeck[i] );
+				break;
+				case 9:
+				boardCards[1]= cutdeck[i];
+				System.out.println("The boards's second card is : " + cutdeck[i] );
+				break;
+				case 10:
+				boardCards[2]= cutdeck[i];
+				System.out.println("The boards's first card is : " + cutdeck[i] );
+				break;
+				case 11:
+				boardCards[3]= cutdeck[i];
+				System.out.println("The boards's first card is : " + cutdeck[i] );
+				break;
+			}
+		}
     }
 }
