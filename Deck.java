@@ -56,77 +56,60 @@ public class Deck{
 	// wrote a separate function for the first round to start and continue the game
 	public void Round(){
 		while(control){
+			//for loop to identify first 4 cards of board
+		for(int i=0;i<4;i++){
+				boardCards[i]= cutdeck[i];
+				System.out.println("The boards's " + (i+1) + ". card is : " + cutdeck[i] );
+				deckLastIndex--;
+			}
 		//for loop to identify first 4 cards of user and pc
-		for(int i=0;i<8;i++){
+		for(int i=4;i<12;i++){
 			// used switch for the distribute the cards 1 by 1 for user and pc
 			switch(i){
-				case 0:
+				case 4:
 				System.out.println("The user's first card is : " + cutdeck[i]);
 				userCards[0]=cutdeck[i];
 				deckLastIndex--;
 				break;
-				case 1: 
+				case 5: 
 				System.out.println("The pc's first card is : " + cutdeck[i]);
 				pcCards[0] = cutdeck[i];
 				deckLastIndex--;
 				break;
-				case 2:
+				case 6:
 				System.out.println("The user's second card is : " + cutdeck[i]);
 				userCards[1]=cutdeck[i];
 				deckLastIndex--;
 				break;
-				case 3: 
+				case 7: 
 				System.out.println("The pc's second card is : " + cutdeck[i]);
 				pcCards[1] = cutdeck[i];
 				deckLastIndex--;
 				break;
-				case 4:
+				case 8:
 				System.out.println("The user's third card is : " + cutdeck[i]);
 				userCards[2]=cutdeck[i];
 				deckLastIndex--;
 				break;
-				case 5: 
+				case 9: 
 				System.out.println("The pc's third card is : " + cutdeck[i]);
 				pcCards[2] = cutdeck[i];
 				deckLastIndex--;
 				break;
-				case 6:
+				case 10:
 				System.out.println("The user's fourth card is : " + cutdeck[i]);
 				userCards[3]=cutdeck[i];
 				deckLastIndex--;
 				break;
-				case 7: 
+				case 11: 
 				System.out.println("The pc's fourth card is : " + cutdeck[i]);
 				pcCards[3] = cutdeck[i];
 				deckLastIndex--;
 				break;
 			}		
-        }//for loop to identify first 4 cards of board
-		for(int i=8;i<12;i++){
-			switch(i){
-				case 8:
-				boardCards[0]= cutdeck[i];
-				System.out.println("The boards's first card is : " + cutdeck[i] );
-				deckLastIndex--;
-				break;
-				case 9:
-				boardCards[1]= cutdeck[i];
-				System.out.println("The boards's second card is : " + cutdeck[i] );
-				deckLastIndex--;
-				break;
-				case 10:
-				boardCards[2]= cutdeck[i];
-				System.out.println("The boards's third card is : " + cutdeck[i] );
-				deckLastIndex--;
-				break;
-				case 11:
-				boardCards[3]= cutdeck[i];
-				System.out.println("The boards's fourth card is : " + cutdeck[i] );
-				deckLastIndex--;
-				break;
-			}
+        }
 			//loop for the playing cards and controlling the collected points
-		}for(int i=0;i<4;i++){
+		for(int i=0;i<4;i++){
 		if(userCards[i].charAt(0) == boardCards[0].charAt(0) || pcCards[i].charAt(0) == boardCards[0].charAt(0) ){
 			if(userCards[i].charAt(0) == boardCards[0].charAt(0)){
 			System.out.println("you did a point ");
