@@ -46,15 +46,16 @@ public class Deck{
 			System.out.println(cutdeck[i]);
 		}
 	}	
-	public static int userPoint = 0;
+	public static int userPoint = 0; 
 	public static int pcPoint = 0;
-	public static int deckLastIndex = 52; //remaining cards
-	public static String[] userCards = new String[52];
-	public static String[] pcCards = new String[52];
-	public static String[] boardCards = new String[52];
+	public static String[] userCards = new String[52];// to store the user's cards
+	public static String[] pcCards = new String[52];// to store the pc's cards
+	public static String[] boardCards = new String[52]; //to store the board's cards
+	// wrote a separate function for the first round to start and continue the game
 	public void firstRound(){
 		//for loop to identify first 4 cards of user and pc
 		for(int i=0;i<8;i++){
+			// used switch for the distribute the cards 1 by 1
 			switch(i){
 				case 0:
 				System.out.println("The user's first card is : " + cutdeck[i]);
@@ -166,8 +167,10 @@ public class Deck{
 			System.out.println("Nobody have a point right now");
 		} else if(userPoint ==0){
 			System.out.println("User has no point right now");
+			System.out.println("Pc has " + pcPoint + " point right now");
 		} else if(pcPoint ==0){
 			System.out.println("Pc has no point right now");
+			System.out.println("User has " + userPoint + " point right now");
 		}
     }
 }
