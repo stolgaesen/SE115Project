@@ -122,40 +122,52 @@ public class Deck{
 			if(userCards[i].charAt(0) == boardCards[0].charAt(0)){
 			System.out.println("you did a point ");
 			userPoint++;
+			break;
 			} else if(pcCards[i].charAt(0) == boardCards[0].charAt(0)){
 				System.out.println("Pc did a point ");
 			    pcPoint++;
+				break;
 			  }  
 		  }
          else if(userCards[i].charAt(0) == boardCards[1].charAt(0) || pcCards[i].charAt(0) == boardCards[1].charAt(0) ){
 			if(userCards[i].charAt(0) == boardCards[1].charAt(0)){
 			System.out.println("you did a point ");
 			userPoint++;
+			break;
 			} else if(pcCards[i].charAt(0) == boardCards[1].charAt(0)){
 				System.out.println("Pc did a point ");
 			    pcPoint++;
+				break;
 			  }  
 		  }
          else if(userCards[i].charAt(0) == boardCards[2].charAt(0) || pcCards[i].charAt(0) == boardCards[2].charAt(0) ){
 			if(userCards[i].charAt(0) == boardCards[2].charAt(0)){
 			System.out.println("you did a point ");
 			userPoint++;
+			break;
 			} else if(pcCards[i].charAt(0) == boardCards[2].charAt(0)){
 				System.out.println("Pc did a point ");
 			    pcPoint++;
+				break;
 			  }  
 		  }
 		 else if(userCards[i].charAt(0) == boardCards[3].charAt(0) || pcCards[i].charAt(0) == boardCards[3].charAt(0) ){
 			if(userCards[i].charAt(0) == boardCards[3].charAt(0)){
 			System.out.println("you did a point ");
 			userPoint++;
+			break;
 			} else if(pcCards[i].charAt(0) == boardCards[3].charAt(0)){
 				System.out.println("Pc did a point");
 			    pcPoint++;
+				break;
 			  }  
 		  } 
-        } if(userPoint == 0 || pcPoint == 0){
+        } if(userPoint == 0 && pcPoint == 0){
 			System.out.println("Nobody have a point right now");
+		} else if(userPoint ==0){
+			System.out.println("User has no point right now");
+		} else if(pcPoint ==0){
+			System.out.println("Pc has no point right now");
 		}
     }
 }
