@@ -7,7 +7,7 @@ public static void main(String[] args){
 	a.shuffle();
 	System.out.println("Please enter a number and cut the deck");
 	a.cut();
-	a.firstRound();
+	a.Round();
 	
  }
 }

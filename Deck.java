@@ -46,16 +46,19 @@ public class Deck{
 			System.out.println(cutdeck[i]);
 		}
 	}	
+	public static boolean control = true;
+	public static int deckLastIndex = 52;
 	public static int userPoint = 0; 
 	public static int pcPoint = 0;
 	public static String[] userCards = new String[52];// to store the user's cards
 	public static String[] pcCards = new String[52];// to store the pc's cards
 	public static String[] boardCards = new String[52]; //to store the board's cards
 	// wrote a separate function for the first round to start and continue the game
-	public void firstRound(){
+	public void Round(){
+		while(control){
 		//for loop to identify first 4 cards of user and pc
 		for(int i=0;i<8;i++){
-			// used switch for the distribute the cards 1 by 1
+			// used switch for the distribute the cards 1 by 1 for user and pc
 			switch(i){
 				case 0:
 				System.out.println("The user's first card is : " + cutdeck[i]);
@@ -104,20 +107,25 @@ public class Deck{
 				case 8:
 				boardCards[0]= cutdeck[i];
 				System.out.println("The boards's first card is : " + cutdeck[i] );
+				deckLastIndex--;
 				break;
 				case 9:
 				boardCards[1]= cutdeck[i];
 				System.out.println("The boards's second card is : " + cutdeck[i] );
+				deckLastIndex--;
 				break;
 				case 10:
 				boardCards[2]= cutdeck[i];
 				System.out.println("The boards's third card is : " + cutdeck[i] );
+				deckLastIndex--;
 				break;
 				case 11:
 				boardCards[3]= cutdeck[i];
 				System.out.println("The boards's fourth card is : " + cutdeck[i] );
+				deckLastIndex--;
 				break;
 			}
+			//loop for the playing cards and controlling the collected points
 		}for(int i=0;i<4;i++){
 		if(userCards[i].charAt(0) == boardCards[0].charAt(0) || pcCards[i].charAt(0) == boardCards[0].charAt(0) ){
 			if(userCards[i].charAt(0) == boardCards[0].charAt(0)){
@@ -162,8 +170,55 @@ public class Deck{
 			    pcPoint++;
 				break;
 			  }  
-		  } 
-        } if(userPoint == 0 && pcPoint == 0){
+		  }
+		}
+		/**  for(int i=12;i<20;i++){
+			// used switch for the distribute the cards 1 by 1 for user and pc
+			switch(i){
+				case 12:
+				System.out.println("The user's 5. card is : " + cutdeck[i]);
+				userCards[4]=cutdeck[i];
+				deckLastIndex--;
+				break;
+				case 13: 
+				System.out.println("The pc's 5. card is : " + cutdeck[i]);
+				pcCards[4] = cutdeck[i];
+				deckLastIndex--;
+				break;
+				case 14:
+				System.out.println("The user's 6. card is : " + cutdeck[i]);
+				userCards[5]=cutdeck[i];
+				deckLastIndex--;
+				break;
+				case 15: 
+				System.out.println("The pc's 6. card is : " + cutdeck[i]);
+				pcCards[5] = cutdeck[i];
+				deckLastIndex--;
+				break;
+				case 16:
+				System.out.println("The user's 7. card is : " + cutdeck[i]);
+				userCards[6]=cutdeck[i];
+				deckLastIndex--;
+				break;
+				case 17: 
+				System.out.println("The pc's 7. card is : " + cutdeck[i]);
+				pcCards[6] = cutdeck[i];
+				deckLastIndex--;
+				break;
+				case 18:
+				System.out.println("The user's 8. card is : " + cutdeck[i]);
+				userCards[7]=cutdeck[i];
+				deckLastIndex--;
+				break;
+				case 19: 
+				System.out.println("The pc's 8. card is : " + cutdeck[i]);
+				pcCards[7] = cutdeck[i];
+				deckLastIndex--;
+				break;
+			}
+		  
+        }**/
+		if(userPoint == 0 && pcPoint == 0){
 			System.out.println("Nobody have a point right now");
 		} else if(userPoint ==0){
 			System.out.println("User has no point right now");
@@ -171,6 +226,9 @@ public class Deck{
 		} else if(pcPoint ==0){
 			System.out.println("Pc has no point right now");
 			System.out.println("User has " + userPoint + " point right now");
-		}
+			
+		} System.out.println(deckLastIndex);
+		 control = false;
+	  }	
     }
 }
