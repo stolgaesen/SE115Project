@@ -46,6 +46,8 @@ public class Deck{
 			System.out.println(cutdeck[i]);
 		}
 	}	
+	public static int userPoint = 0;
+	public static int pcPoint = 0;
 	public static int deckLastIndex = 52; //remaining cards
 	public static String[] userCards = new String[52];
 	public static String[] pcCards = new String[52];
@@ -108,13 +110,52 @@ public class Deck{
 				break;
 				case 10:
 				boardCards[2]= cutdeck[i];
-				System.out.println("The boards's first card is : " + cutdeck[i] );
+				System.out.println("The boards's third card is : " + cutdeck[i] );
 				break;
 				case 11:
 				boardCards[3]= cutdeck[i];
-				System.out.println("The boards's first card is : " + cutdeck[i] );
+				System.out.println("The boards's fourth card is : " + cutdeck[i] );
 				break;
 			}
+		}for(int i=0;i<4;i++){
+		if(userCards[i].charAt(0) == boardCards[0].charAt(0) || pcCards[i].charAt(0) == boardCards[0].charAt(0) ){
+			if(userCards[i].charAt(0) == boardCards[0].charAt(0)){
+			System.out.println("you did a point ");
+			userPoint++;
+			} else if(pcCards[i].charAt(0) == boardCards[0].charAt(0)){
+				System.out.println("Pc did a point ");
+			    pcPoint++;
+			  }  
+		  }
+         else if(userCards[i].charAt(0) == boardCards[1].charAt(0) || pcCards[i].charAt(0) == boardCards[1].charAt(0) ){
+			if(userCards[i].charAt(0) == boardCards[1].charAt(0)){
+			System.out.println("you did a point ");
+			userPoint++;
+			} else if(pcCards[i].charAt(0) == boardCards[1].charAt(0)){
+				System.out.println("Pc did a point ");
+			    pcPoint++;
+			  }  
+		  }
+         else if(userCards[i].charAt(0) == boardCards[2].charAt(0) || pcCards[i].charAt(0) == boardCards[2].charAt(0) ){
+			if(userCards[i].charAt(0) == boardCards[2].charAt(0)){
+			System.out.println("you did a point ");
+			userPoint++;
+			} else if(pcCards[i].charAt(0) == boardCards[2].charAt(0)){
+				System.out.println("Pc did a point ");
+			    pcPoint++;
+			  }  
+		  }
+		 else if(userCards[i].charAt(0) == boardCards[3].charAt(0) || pcCards[i].charAt(0) == boardCards[3].charAt(0) ){
+			if(userCards[i].charAt(0) == boardCards[3].charAt(0)){
+			System.out.println("you did a point ");
+			userPoint++;
+			} else if(pcCards[i].charAt(0) == boardCards[3].charAt(0)){
+				System.out.println("Pc did a point");
+			    pcPoint++;
+			  }  
+		  } 
+        } if(userPoint == 0 || pcPoint == 0){
+			System.out.println("Nobody have a point right now");
 		}
     }
 }
