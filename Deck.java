@@ -115,57 +115,47 @@ public class Deck{
 			if(userCards[i].charAt(0) == boardCards[k].charAt(0)){
 				// if for the number is 10, because 10 is 3 point
 				if(userCards[k].charAt(0) == '1'){
-					if(boardCards[k].charAt(0) == '1'){
 					System.out.println("User used 10 and earned 3 point");
 					userPoint +=3;
 					break;
-					}
-				}//else if for the number is 2, because any 2 ise 2 point
+				  }
+				//else if for the number is 2, because any 2 ise 2 point
 				else if(userCards[k].charAt(0)== '2'){
-					if(boardCards[k].charAt(0) == '2'){
 					System.out.println("User used 2 and earned 2 point");
 					userPoint +=2;
 					break;
-					}
-				}//else if for the jack of any cards,because jack is allowed to collect every card on the board
+				  }
+				//else if for the jack of any cards,because jack is allowed to collect every card on the board
 				else if(userCards[k].charAt(0) == 'J'){
 					System.out.println("User used jack and collected all the cards on the board");
-			     for(int j=0;j<4;j++){
-					 boardCards[i]=null;
-					 break;
-				 }
+					userPoint++;
+					break;
 				}
 			System.out.println("you did a point ");
 			userPoint++;
-			boardCards[k]=null;;//for empty the array element,because it's used and taken by the user
 			break;
 			} else if(pcCards[i].charAt(0) == boardCards[k].charAt(0)){
 				// if for the number is 10 because 10 is 3 point
 				if(userCards[k].charAt(0) == '1'){
-					if(boardCards[k].charAt(0) == '1'){
 					System.out.println("Pc used 10 and earned 3 point");
 					pcPoint +=3;
 					break;
 					}
 				}//else if for the number is 2, because any 2 ise 2 point
-				else if(pcCards[k].charAt(0)== '2'){
-					if(boardCards[k].charAt(0) == '2'){
+				else if(pcCards[k].charAt(0) == '2'){
 					System.out.println("Pc used 2 and earned 2 point");
-					boardCards[k]=null;
 					userPoint +=2;
 					break;
 					}
-				}//else if for the jack of any cards,because jack is allowed to collect every card on the board
+				//else if for the jack of any cards,because jack is allowed to collect every card on the board
 				else if(pcCards[k].charAt(0) == 'J'){
 					System.out.println("Pc used jack and collected all the cards on the board");
-			     for(int j=0;j<4;j++){
-					 boardCards[i]=null;
-				 }
-				}
+					pcPoint++;
+				    break;
+				    }
 				System.out.println("Pc did a point ");
 			    pcPoint++;
-				break;
-			  }  
+				break;  
 		    }
 		  }
 		}
@@ -216,61 +206,37 @@ public class Deck{
 			}		
         }
 		 //loop for the playing cards and controlling the collected points
-		for(int i=0;i<4;i++){
-			for(int k=0;k<4;k++){
-		if(userCards[i].charAt(0) == boardCards[k].charAt(0) || pcCards[i].charAt(0) == boardCards[k].charAt(0) ){
-			if(userCards[i].charAt(0) == boardCards[k].charAt(0)){
+		for(int i=4;i<8;i++){
+			for(int k=4;k<8;k++){
+		        if(userCards[i].charAt(0) == pcCards[k].charAt(0)){
 				// if for the number is 10, because 10 is 3 point
-				if(userCards[k].charAt(0) == '1'){
-					if(boardCards[k].charAt(0) == '1'){
+				  if(userCards[k].charAt(0) == '1'){
 					System.out.println("User used 10 and earned 3 point");
 					userPoint +=3;
 					break;
 					}
-				}//else if for the number is 2, because any 2 ise 2 point
-				else if(userCards[k].charAt(0)== '2'){
-					if(boardCards[k].charAt(0) == '2'){
+				  //else if for the number is 2, because any 2 ise 2 point
+				  else if(userCards[k].charAt(0)== '2'){
 					System.out.println("User used 2 and earned 2 point");
 					userPoint +=2;
 					break;
 					}
-				}//else if for the jack of any cards,because jack is allowed to collect every card on the board
-				else if(userCards[k].charAt(0) == 'J'){
+				  //else if for the jack of any cards,because jack is allowed to collect every card on the board without doubt
+				  else if(userCards[k].charAt(0) == 'J'){
 					System.out.println("User used jack and collected all the cards on the board");
-			     for(int j=0;j<4;j++){
-					 break;
-				 }
+					userPoint++;
+			        break;
 				}
 			System.out.println("you did a point ");
 			userPoint++;
 			break;
-			} else if(pcCards[i].charAt(0) == boardCards[k].charAt(0)){
-				// if for the number is 10 because 10 is 3 point
-				if(userCards[k].charAt(0) == '1'){
-					if(boardCards[k].charAt(0) == '1'){
-					System.out.println("Pc used 10 and earned 3 point");
-					pcPoint +=3;
-					break;
+			//else pc's card is not equal to user's card
+			    } else {
+					for(int a=0;a<4;a++){
+			           userCards[k]=boardCards[a];
 					}
-				}//else if for the number is 2, because any 2 ise 2 point
-				else if(pcCards[k].charAt(0)== '2'){
-					if(boardCards[k].charAt(0) == '2'){
-					System.out.println("Pc used 2 and earned 2 point");
-					userPoint +=2;
-					break;
-					}
-				}//else if for the jack of any cards,because jack is allowed to collect every card on the board
-				else if(pcCards[k].charAt(0) == 'J'){
-					System.out.println("Pc used jack and collected all the cards on the board");
-			     for(int j=0;j<4;j++){
-				 }
-				}
-				System.out.println("Pc did a point ");
-			    pcPoint++;
-				break;
 			  }  
 		    }
-		  }
 		} 
 		if(userPoint == 0 && pcPoint == 0){
 			System.out.println("Nobody have a point right now");
@@ -286,7 +252,7 @@ public class Deck{
 			System.out.println("Pc has " + pcPoint + " point right now");
 		}
 		System.out.println(deckLastIndex);
-		 control = false;
-	  }	
+		 control = false;	
     }
+  }
 }
