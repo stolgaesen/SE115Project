@@ -108,99 +108,71 @@ public class Deck{
 				break;
 			}		
         }
-			//loop for the playing cards and controlling the collected points
+	     //loop for the playing cards and controlling the collected points
 		for(int i=0;i<4;i++){
-		if(userCards[i].charAt(0) == boardCards[0].charAt(0) || pcCards[i].charAt(0) == boardCards[0].charAt(0) ){
-			if(userCards[i].charAt(0) == boardCards[0].charAt(0)){
+			for(int k=0;k<4;k++){
+		if(userCards[i].charAt(0) == boardCards[k].charAt(0) || pcCards[i].charAt(0) == boardCards[k].charAt(0) ){
+			if(userCards[i].charAt(0) == boardCards[k].charAt(0)){
+				// if for the number is 10 because 10 is 3 point
+				if(userCards[k].charAt(0) == '1'){
+					if(boardCards[k].charAt(0) == '1'){
+					System.out.println("User used 10 and earned 3 point");
+					boardCards[k]=null;//for empty the array element,because it's used and taken by the user
+					userPoint +=3;
+					break;
+					}
+				}//else if for the number is 2, because any 2 ise 2 point
+				else if(userCards[k].charAt(0)== '2'){
+					if(boardCards[k].charAt(0) == '2'){
+					System.out.println("User used 2 and earned 2 point");
+					boardCards[k]=null;;//for empty the array element,because it's used and taken by the user
+					userPoint +=2;
+					break;
+					}
+				}//else if for the jack of any cards,because jack is allowed to collect every card on the board
+				else if(userCards[k].charAt(0) == 'J'){
+					System.out.println("User used jack and collected all the cards on the board");
+			     for(int j=0;j<4;j++){
+					 boardCards[i]=null;;//for empty the array element,because it's used and taken by the user
+					 break;
+				 }
+				}
 			System.out.println("you did a point ");
 			userPoint++;
+			boardCards[k]=null;;//for empty the array element,because it's used and taken by the user
 			break;
-			} else if(pcCards[i].charAt(0) == boardCards[0].charAt(0)){
+			} else if(pcCards[i].charAt(0) == boardCards[k].charAt(0)){
+				// if for the number is 10 because 10 is 3 point
+				if(userCards[k].charAt(0) == '1'){
+					if(boardCards[k].charAt(0) == '1'){
+					System.out.println("Pc used 10 and earned 3 point");
+					boardCards[k]=null;//for empty the array element,because it's used and taken by the pc
+					pcPoint +=3;
+					break;
+					}
+				}//else if for the number is 2, because any 2 ise 2 point
+				else if(pcCards[k].charAt(0)== '2'){
+					if(boardCards[k].charAt(0) == '2'){
+					System.out.println("Pc used 2 and earned 2 point");
+					boardCards[k]=null;
+					userPoint +=2;
+					break;
+					}
+				}//else if for the jack of any cards,because jack is allowed to collect every card on the board
+				else if(pcCards[k].charAt(0) == 'J'){
+					System.out.println("Pc used jack and collected all the cards on the board");
+			     for(int j=0;j<4;j++){
+					 boardCards[i]=null;
+				 }
+				}
 				System.out.println("Pc did a point ");
-			    pcPoint++;
-				break;
-			  }  
-		  }
-         else if(userCards[i].charAt(0) == boardCards[1].charAt(0) || pcCards[i].charAt(0) == boardCards[1].charAt(0) ){
-			if(userCards[i].charAt(0) == boardCards[1].charAt(0)){
-			System.out.println("you did a point ");
-			userPoint++;
-			break;
-			} else if(pcCards[i].charAt(0) == boardCards[1].charAt(0)){
-				System.out.println("Pc did a point ");
-			    pcPoint++;
-				break;
-			  }  
-		  }
-         else if(userCards[i].charAt(0) == boardCards[2].charAt(0) || pcCards[i].charAt(0) == boardCards[2].charAt(0) ){
-			if(userCards[i].charAt(0) == boardCards[2].charAt(0)){
-			System.out.println("you did a point ");
-			userPoint++;
-			break;
-			} else if(pcCards[i].charAt(0) == boardCards[2].charAt(0)){
-				System.out.println("Pc did a point ");
-			    pcPoint++;
-				break;
-			  }  
-		  }
-		 else if(userCards[i].charAt(0) == boardCards[3].charAt(0) || pcCards[i].charAt(0) == boardCards[3].charAt(0) ){
-			if(userCards[i].charAt(0) == boardCards[3].charAt(0)){
-			System.out.println("you did a point ");
-			userPoint++;
-			break;
-			} else if(pcCards[i].charAt(0) == boardCards[3].charAt(0)){
-				System.out.println("Pc did a point");
 			    pcPoint++;
 				break;
 			  }  
 		  }
 		}
-		/**  for(int i=12;i<20;i++){
-			// used switch for the distribute the cards 1 by 1 for user and pc
-			switch(i){
-				case 12:
-				System.out.println("The user's 5. card is : " + cutdeck[i]);
-				userCards[4]=cutdeck[i];
-				deckLastIndex--;
-				break;
-				case 13: 
-				System.out.println("The pc's 5. card is : " + cutdeck[i]);
-				pcCards[4] = cutdeck[i];
-				deckLastIndex--;
-				break;
-				case 14:
-				System.out.println("The user's 6. card is : " + cutdeck[i]);
-				userCards[5]=cutdeck[i];
-				deckLastIndex--;
-				break;
-				case 15: 
-				System.out.println("The pc's 6. card is : " + cutdeck[i]);
-				pcCards[5] = cutdeck[i];
-				deckLastIndex--;
-				break;
-				case 16:
-				System.out.println("The user's 7. card is : " + cutdeck[i]);
-				userCards[6]=cutdeck[i];
-				deckLastIndex--;
-				break;
-				case 17: 
-				System.out.println("The pc's 7. card is : " + cutdeck[i]);
-				pcCards[6] = cutdeck[i];
-				deckLastIndex--;
-				break;
-				case 18:
-				System.out.println("The user's 8. card is : " + cutdeck[i]);
-				userCards[7]=cutdeck[i];
-				deckLastIndex--;
-				break;
-				case 19: 
-				System.out.println("The pc's 8. card is : " + cutdeck[i]);
-				pcCards[7] = cutdeck[i];
-				deckLastIndex--;
-				break;
-			}
+		}
 		  
-        }**/
 		if(userPoint == 0 && pcPoint == 0){
 			System.out.println("Nobody have a point right now");
 		} else if(userPoint ==0){
@@ -210,7 +182,11 @@ public class Deck{
 			System.out.println("Pc has no point right now");
 			System.out.println("User has " + userPoint + " point right now");
 			
-		} System.out.println(deckLastIndex);
+		}else if(pcPoint !=0 || userPoint !=0){
+			System.out.println("User has " + userPoint + " point right now");
+			System.out.println("Pc has " + pcPoint + " point right now");
+		}
+		System.out.println(deckLastIndex);
 		 control = false;
 	  }	
     }
