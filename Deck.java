@@ -30,20 +30,36 @@ public class Deck{
 		}
 	}	
     String[] cutdeck = new String[52];
+	int cutpoint;
+	boolean cutpointcontrol = true;
+	boolean cutcontrol =true;
     //Cut function for the deck	
 	public void cut(){
-		int cutpoint = sc.nextInt();
-		if(cutpoint >=1 && cutpoint <=51) System.out.println("Cutting is doing");
-		else System.out.println("Please enter a valid cutpoint");	
-		String[] copying1 = new String[cutpoint];
-		String[] copying2 = new String[52-cutpoint];
-		System.arraycopy(deck, 0 , copying1, 0 ,cutpoint);
-		System.arraycopy(deck,copying1.length,copying2,0,copying2.length);
-		System.arraycopy(copying2,0,cutdeck,0,copying2.length);
-		System.arraycopy(copying1,0,cutdeck,copying2.length,copying1.length);
-		//loop for the printing the cutted deck
-		for(int i =0;i<cutdeck.length;i++){
-			System.out.println(cutdeck[i]);
+		while(cutcontrol){
+		    try{
+			    while(cutpointcontrol){
+				  cutpoint = sc.nextInt();
+				  if(cutpoint >=1 && cutpoint <=51){
+			      System.out.println("Cutting is doing");
+			      cutpointcontrol =false;
+				  cutcontrol = false;
+				    } else System.out.println("Not a valid number! Try again");
+			    }
+			  String[] copying1 = new String[cutpoint];
+		      String[] copying2 = new String[52-cutpoint];
+		      System.arraycopy(deck, 0 , copying1, 0 ,cutpoint);
+		      System.arraycopy(deck,copying1.length,copying2,0,copying2.length);
+		      System.arraycopy(copying2,0,cutdeck,0,copying2.length);
+		      System.arraycopy(copying1,0,cutdeck,copying2.length,copying1.length);
+		      //loop for the printing the cutted deck
+		      for(int i =0;i<cutdeck.length;i++){
+			  System.out.println(cutdeck[i]);
+                }
+		    }
+			catch (InputMismatchException e){
+                    System.out.println("Not a valid number! Try again");
+                    sc.nextLine();
+            }
 		}
 	}	
 	public static boolean control = true;
