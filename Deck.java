@@ -332,7 +332,85 @@ public class Deck{
 					}
 			  }  
 		    }
-		}	
+		} // for loop to identify third 4 cards of user and pc
+		for(int i=28;i<36;i++){
+			// used switch for the distribute the cards 1 by 1 for user and pc
+			switch(i){
+				case 28:
+				System.out.println("The user's 13. card is : " + cutdeck[i]);
+				userCards[12]=cutdeck[i];
+				deckLastIndex--;
+				break;
+				case 29: 
+				System.out.println("The pc's 13. card is : " + cutdeck[i]);
+				pcCards[12] = cutdeck[i];
+				deckLastIndex--;
+				break;
+				case 30:
+				System.out.println("The user's 14. card is : " + cutdeck[i]);
+				userCards[13]=cutdeck[i];
+				deckLastIndex--;
+				break;
+				case 31: 
+				System.out.println("The pc's 14. card is : " + cutdeck[i]);
+				pcCards[13] = cutdeck[i];
+				deckLastIndex--;
+				break;
+				case 32:
+				System.out.println("The user's 15. card is : " + cutdeck[i]);
+				userCards[14]=cutdeck[i];
+				deckLastIndex--;
+				break;
+				case 33: 
+				System.out.println("The pc's 15. card is : " + cutdeck[i]);
+				pcCards[14] = cutdeck[i];
+				deckLastIndex--;
+				break;
+				case 34:
+				System.out.println("The user's 16. card is : " + cutdeck[i]);
+				userCards[15]=cutdeck[i];
+				deckLastIndex--;
+				break;
+				case 35: 
+				System.out.println("The pc's 16. card is : " + cutdeck[i]);
+				pcCards[15] = cutdeck[i];
+				deckLastIndex--;
+				break;
+			}		
+        }
+		 //loop for the playing cards and controlling the collected points
+		for(int i=12;i<16;i++){
+			for(int k=12;k<16;k++){
+		        if(userCards[i].charAt(0) == pcCards[k].charAt(0)){
+				// if for the number is 10, because 10 is 3 point
+				  if(userCards[k].charAt(0) == '1'){
+					System.out.println("User used 10 and earned 3 point");
+					userPoint +=3;
+					break;
+					}
+				  //else if for the number is 2, because any 2 ise 2 point
+				  else if(userCards[k].charAt(0)== '2'){
+					System.out.println("User used 2 and earned 2 point");
+					userPoint +=2;
+					break;
+					}
+				  //else if for the jack of any cards,because jack is allowed to collect every card on the board without doubt
+				  else if(userCards[k].charAt(0) == 'J'){
+					System.out.println("User used jack and collected all the cards on the board");
+					userPoint++;
+			        break;
+				}
+			System.out.println("you did a point ");
+			userPoint++;
+			break;
+			//else pc's card is not equal to user's card
+			    } else {
+					for(int a=0;a<4;a++){
+			           userCards[k]=boardCards[a];
+					}
+			  }  
+		    }
+		}
 		if(userPoint == 0 && pcPoint == 0){ //if nobody has a point
 			System.out.println("Nobody have a point right now");
 		} else if(userPoint ==0){ //if only pc has a point
