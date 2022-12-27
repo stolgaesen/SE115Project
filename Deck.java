@@ -8,7 +8,7 @@ public class Deck{
 	Scanner sc = new Scanner(System.in);
     int n = SUITS.length * RANKS.length; //n is 52 
     String[] deck = new String[n];// string array for the hold the all of the cards
-    // It's deck constructor
+    // It's a deck constructor
 	Deck(){
         for (int i = 0; i < RANKS.length; i++) { // loop to set all cards
             for (int j = 0; j < SUITS.length; j++) {
@@ -19,7 +19,7 @@ public class Deck{
 	public void shuffle(){ // to shuffle the deck	
 		for (int i = 0; i < n; i++) { //loop to shuffle all cards
             int r = i + (int) (Math.random() * (n-i));
-            String temp = deck[r];
+            String temp = deck[r]; // creating a temperory string variable
             deck[r] = deck[i];
             deck[i] = temp;
 		}	
@@ -29,7 +29,7 @@ public class Deck{
 	}	
     String[] cutdeck = new String[52];// for hold the cutted deck
 	int cutpoint; //this would be an input form the user
-	boolean cutpointcontrol = true;// control variable for the input has to between 1 and 51
+	boolean cutpointcontrol = true;// control variable for the input because input has to between 1 and 52
 	boolean cutcontrol =true;// control variable for the try and catch
 	public void cut(){ // Cut function for the deck
 		while(cutcontrol){
@@ -51,7 +51,7 @@ public class Deck{
 		      for(int i =0;i<cutdeck.length;i++){ // loop for the printing the cutted deck
 			  System.out.println(cutdeck[i]);
                 }
-		    }// catch the possible not integer inputs
+		    }// catch the possibility for the not integer inputs
 			catch (InputMismatchException e){
                     System.out.println("Not a valid number! Try again");
                     sc.nextLine();
