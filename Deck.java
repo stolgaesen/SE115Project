@@ -10,7 +10,7 @@ public class Deck{
     String[] deck = new String[n];// string array for the hold the all of the cards
     // It's a deck constructor
 	Deck(){
-        for (int i = 0; i < RANKS.length; i++) { // loop to set all cards
+        for (int i = 0; i < RANKS.length; i++) { // loop for to set all cards
             for (int j = 0; j < SUITS.length; j++) {
                 deck[SUITS.length*i + j] = RANKS[i] + " of " + SUITS[j];
             }
@@ -18,9 +18,9 @@ public class Deck{
 	}
 	public void shuffle(){ // to shuffle the deck	
 		for (int i = 0; i < n; i++) { //loop to shuffle all cards
-            int r = i + (int) (Math.random() * (n-i));
-            String temp = deck[r]; // creating a temperory string variable
-            deck[r] = deck[i];
+            int a = i + (int) (Math.random() * (n-i));
+            String temp = deck[a]; // creating a temporary string variable
+            deck[a] = deck[i];
             deck[i] = temp;
 		}	
 		for (int i = 0; i < n; i++) { //loop for printing the shuffled deck	
