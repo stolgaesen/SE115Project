@@ -53,7 +53,7 @@ public class Deck{
                 }
 		    }// catch the possibility for the not integer inputs
 			catch (InputMismatchException e){
-                    System.out.println("Not a valid number! Try again");
+                    System.err.println("Not a valid number! Try again");
                     sc.nextLine();
             }
 		}
